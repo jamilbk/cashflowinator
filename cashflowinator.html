@@ -22,20 +22,27 @@
   </head>
   <body>
     <div class="page-header hero-unit">
-      <h1>CashFlowinator. <small>Simple, yet Budgetary.</small></h1>
+      <h1>CashFlowinator. <small>Simple, Yet Budgetary.</small></h1>
+      <p class="lead">
+        Enter sets of date / amount pairs to build a cash flow curve.
+      </p>
+      <p>
+        If a date is entered more than once, all the amounts for that date are summed
+        together.
+      </p>
     </div>
     <div id="cash-flow-view" class="container">
       <div class="well">
         <form class="form form-inline">
           <label>
             Date
-            <input type="text" class="datepicker" name="date" />
+            <input type="text" placeholder="mm/dd/yyyy" class="datepicker" name="date" />
           </label>
           <label>
             Amount
 
             <!-- Enter a float value here -->
-            <input type="text" name="amount" />
+            <input type="text" name="amount" placeholder="examples: 14.5, -23, or 4000" />
           </label>
           <button type="button" class="btn btn-primary" data-action="add">Add</button>
         </form>
