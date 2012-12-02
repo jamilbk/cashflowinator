@@ -19,7 +19,6 @@ window.CashFlowView = Backbone.View.extend({
       existing[0].set('amounts', amounts);
       window.col.remove(existing[0]);
       window.col.add(existing[0]);
-      console.log(existing[0]);
     } else {
       window.col.add(new window.CashFlowModel({
         amounts: [amount],
@@ -85,10 +84,8 @@ jQuery(window).ready(function () {
   window.cashFlowChart = new window.CashFlowChart();
 
   window.col = new window.CashFlowCollection();
-  console.log(window.col);
   window.col.view = window.cashFlowChart;
-  window.col.on('add', window.col.onChange);
-  window.col.on('change', window.col.onChange);
+  window.col.on('add change', window.col.onChange);
 
-  var view = new window.CashFlowView();
+  (new window.CashFlowView());
 });
