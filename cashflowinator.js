@@ -44,8 +44,7 @@ window.CashFlowChart = Backbone.View.extend({
     var all_amounts = col.pluck("amounts");
 
     _.each(all_amounts, function (amounts) {
-      var sum = _.reduce(amounts, window.sum, 0.0);
-      y.push(sum / amounts.length);
+      y.push(_.reduce(amounts, window.sum, 0.0));
     });
 
     if (this.paper) this.paper.remove();
@@ -70,6 +69,10 @@ window.CashFlowModel = Backbone.Model.extend({
 
 
 window.CashFlowCollection = Backbone.Collection.extend({
+  comparator: function (element) {
+    return element.get('date');
+  },
+
   onChange: function () {
     this.view.render(this);
   },
