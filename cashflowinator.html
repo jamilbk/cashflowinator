@@ -24,31 +24,48 @@
     <div class="page-header hero-unit">
       <h1>CashFlowinator. <small>Simple, Yet Budgetary.</small></h1>
       <p class="lead">
-        Enter sets of date / amount pairs to build a cash flow curve.
+        Enter sets of date / amount pairs to build a cash flow curve.<!-- Hover over the curve to see the amount for that date.-->
       </p>
       <p>
         If a date is entered more than once, all the amounts for that date are summed
         together.
       </p>
     </div>
-    <div id="cash-flow-view" class="container">
-      <div class="well">
-        <form class="form form-inline">
-          <label>
-            Date
-            <input type="text" placeholder="mm/dd/yyyy" class="datepicker" name="date" />
-          </label>
-          <label>
-            Amount
+    <div id="cash-flow-view" class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2 well">
+          <form class="form">
+            <div class="control-group">
+              <label class="control-label" for="inputDate">Date</label>
+              <div class="controls">
+                <input type="text" id="inputDate" placeholder="mm/dd/yyyy"
+                  class="datepicker input-small" name="date" />
+              </div>
+            </div>
 
-            <!-- Enter a float value here -->
-            <input type="text" name="amount" placeholder="examples: 14.5, -23, or 4000" />
-          </label>
-          <button type="button" class="btn btn-primary" data-action="add">Add</button>
-        </form>
+            <div class="control-group">
+              <label class="control-label" for="inputAmount">Amount</label>
 
-        <div id="cash-flow-chart">
-          <!-- Placeholder in which we'll draw the chart -->
+              <!-- Enter a float value here -->
+              <div class="controls">
+                <div class="input-prepend">
+                  <span class="add-on">$</span>
+                  <input type="text" id="inputAmount" name="amount"
+                    placeholder="examples: 14.5, -23, or 4000" class="input-small" />
+                </div>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="controls">
+                <button type="button" class="btn btn-primary" data-action="add">Add</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="span10" id="cash-flow-chart">
+            <!-- Placeholder in which we'll draw the chart -->
         </div>
       </div>
     </div>
