@@ -4,6 +4,7 @@
 Simpley open cashflowinator.html in a modern web browser. No installation necessary.
 
 ## To Do:
-1. Use summing chart instead of linear.
-2. Display meaning axis and hover labels.
+1. Display meaningful axis and hover labels.
+2. LocalStorage
+3. Reset button
 
